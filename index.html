@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NottIdle — contas idle, farm e Hunt em um só app</title>
+  <meta name="description" content="App para Windows que reúne contas idle, farm de pontos na Twitch e na Kick, grade multi-conta e Hunt. Gratuito, sem anúncios e com atualização automática.">
+  <meta name="theme-color" content="#08070c">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="canonical" href="https://vinnyfachiani.github.io/NottIdle-Releases/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="NottIdle">
+  <meta property="og:title" content="NottIdle — contas idle, farm e Hunt em um só app">
+  <meta property="og:description" content="Contas idle, farm de pontos na Twitch e na Kick, grade multi-conta e Hunt. Gratuito, sem anúncios e com atualização automática.">
+  <meta property="og:url" content="https://vinnyfachiani.github.io/NottIdle-Releases/">
+  <meta property="og:image" content="https://vinnyfachiani.github.io/NottIdle-Releases/assets/img/screenshot.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "NottIdle",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "description": "App para Windows que reúne contas idle, farm de pontos na Twitch e na Kick, grade multi-conta e Hunt.",
+    "url": "https://vinnyfachiani.github.io/NottIdle-Releases/",
+    "downloadUrl": "https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "author": { "@type": "Person", "name": "Vinny Fachiani" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="NottIdle — início">
+        <img src="assets/img/logo.png" alt="" width="30" height="30">
+        <span>NottIdle</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+
+      <nav id="menu-principal" class="nav" aria-label="Principal">
+        <a href="#recursos">Recursos</a>
+        <a href="#capturas">Capturas</a>
+        <a href="#instalacao">Instalação</a>
+        <a href="#apoie">Apoie</a>
+        <a class="nav-external" href="https://github.com/VinnyFachiani/NottIdle-Releases" target="_blank" rel="noopener">
+          GitHub
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </nav>
+
+      <a class="btn btn-primary btn-small header-cta" href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest" data-download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        Baixar
+      </a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="badge">
+            <span class="dot" aria-hidden="true"></span>
+            <span data-version>v1.0.2</span>
+            <span class="badge-sep" aria-hidden="true">·</span>
+            Windows 10/11
+          </p>
+
+          <h1>Suas contas, seus canais, seu farm. <em>Em um só lugar.</em></h1>
+
+          <p class="lead">
+            O NottIdle junta contas idle, farm de pontos na Twitch e na Kick, grade multi-conta e a Hunt
+            em um app leve para Windows — sem anúncios, sem plano pago e com atualização automática.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary btn-lg" href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest" data-download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              Baixar para Windows
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/VinnyFachiani/NottIdle-Releases" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+              Ver no GitHub
+            </a>
+          </div>
+
+          <p class="fineprint">
+            <span data-size>~74 MB</span> · instalação por usuário · sem administrador
+          </p>
+        </div>
+
+        <figure class="hero-shot reveal">
+          <div class="window">
+            <div class="window-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <p>NottIdle</p>
+            </div>
+            <img src="assets/img/screenshot.png" alt="Tela principal do NottIdle com contas, canais e status de farm" width="1280" height="800" fetchpriority="high">
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="strip" aria-label="Resumo">
+      <div class="container strip-grid">
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Sem anúncios</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Sem plano pago</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Dados ficam na sua máquina</p>
+        <p><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Atualiza sozinho</p>
+      </div>
+    </section>
+
+    <section id="recursos" class="section">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Recursos</p>
+          <h2>Tudo o que um hub idle precisa — e nada que atrapalhe.</h2>
+          <p class="section-sub">Feito para quem abre várias contas ao mesmo tempo e quer que o farm continue enquanto faz outra coisa.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Multi-contas isoladas</h3>
+            <p>Cada conta com sessão, cookies e extensões próprios. Grupos, presets e divisórias para organizar tudo.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <h3>Farm Twitch + Kick</h3>
+            <p>Pontos em segundo plano, reconexão automática e bloqueio de imagens para economizar banda.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+            <h3>Grade sob medida</h3>
+            <p>Presets de layout, reordenação, foco com áudio e modo Solo para assistir uma conta por vez.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m12 8 1.2 2.8L16 12l-2.8 1.2L12 16l-1.2-2.8L8 12l2.8-1.2Z"/></svg></div>
+            <h3>Hunt integrada</h3>
+            <p>Motor do PokéIdle rodando localmente, com progresso salvo, cache e sprites offline.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 7.8a1.2 1.2 0 0 0 .3 1.2l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.6 1.6a1 1 0 0 1-.9.3c-.5-.1-.8-.5-1-.9a2.5 2.5 0 1 0-3.2 3.2c.4.2.8.5.9 1a1 1 0 0 1-.3.9l-1.6 1.6a2.4 2.4 0 0 1-3.4 0l-1.6-1.6a1 1 0 0 0-.9-.3c-.5.1-.8.5-1 1a2.5 2.5 0 1 1-3.2-3.2c.5-.2.9-.5 1-1a1 1 0 0 0-.3-.9L2.6 13.9a2.4 2.4 0 0 1 0-3.4L4.2 9a1 1 0 0 1 .9-.3c.5.1.9.5 1 1a2.5 2.5 0 1 0 3.3-3.3c-.5-.2-.9-.5-1-1a1 1 0 0 1 .3-.9L10.3 3a2.4 2.4 0 0 1 3.4 0l1.6 1.6a1 1 0 0 0 .9.3c.5-.1.8-.5 1-1a2.5 2.5 0 1 1 3.2 3.2c-.4.2-.8.5-1 1Z"/></svg></div>
+            <h3>Extensões por conta</h3>
+            <p>Instale extensões da Chrome Web Store direto na sessão da conta, sem tocar no seu Chrome.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div>
+            <h3>Atualização automática</h3>
+            <p>Aviso na barra de título e instalação em um clique, preservando contas, canais e configurações.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="capturas" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Por dentro</p>
+          <h2>Do primeiro acesso ao Hunt, tudo no mesmo lugar.</h2>
+          <p class="section-sub">Grade, cards, status ao vivo, assistente de primeiro acesso e a Hunt com ranking por XP/h e ouro/h.</p>
+        </header>
+
+        <div class="shots">
+          <figure class="shot reveal">
+            <div class="window">
+              <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="assets/img/hunt-nottidle.png" alt="Aba Hunt do NottIdle com ficha de Pokémon e ranking de hunts" width="1280" height="800" loading="lazy">
+            </div>
+            <figcaption>Hunt integrada: ficha, ranking por XP/h e ouro/h.</figcaption>
+          </figure>
+
+          <figure class="shot shot-offset reveal">
+            <div class="window">
+              <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="assets/img/shot-onboarding.png" alt="Assistente de primeiro acesso do NottIdle" width="620" height="570" loading="lazy">
+            </div>
+            <figcaption>Assistente de primeiro acesso em três passos.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="apoie" class="section">
+      <div class="container">
+        <div class="apoie-card reveal">
+          <div class="apoie-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>
+          </div>
+          <p class="eyebrow">Apoie o projeto</p>
+          <h2>Se o NottIdle te economiza tempo, paga um café.</h2>
+          <p class="apoie-text">
+            O app é gratuito, sem anúncios e sem versão paga. O apoio cobre domínio, licenças,
+            ferramentas e as horas de teste que ninguém vê — e mantém as atualizações saindo.
+          </p>
+          <a class="btn btn-primary btn-lg" href="https://livepix.gg/montauro" target="_blank" rel="noopener" data-apoio>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg>
+            Me pague um café
+          </a>
+          <p class="fineprint">Pix via LivePix · doação única, sem assinatura. Você escolhe o valor.</p>
+          <p class="apoie-alt">
+            Prefere ajudar de outro jeito? Compartilhe o site com quem também farma ou
+            <a href="https://github.com/VinnyFachiani/NottIdle-Releases" target="_blank" rel="noopener">mande seu feedback pelo GitHub</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="instalacao" class="section section-alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow">Instalação</p>
+          <h2>Do download ao primeiro login em três passos.</h2>
+        </header>
+
+        <div class="install-grid">
+          <ol class="steps">
+            <li class="reveal">
+              <span class="step-num">1</span>
+              <div>
+                <h3>Baixe o instalador</h3>
+                <p>O botão leva direto para o arquivo da última release no GitHub. Nada de espelhos ou downloads de terceiros.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="step-num">2</span>
+              <div>
+                <h3>Execute e escolha a pasta</h3>
+                <p>Instalação por usuário, sem administrador. O atalho aparece no Menu Iniciar.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span class="step-num">3</span>
+              <div>
+                <h3>Abra e conecte as contas</h3>
+                <p>Faça login na Twitch e na Kick, adicione canais e monte sua grade. O assistente mostra o resto.</p>
+              </div>
+            </li>
+          </ol>
+
+          <aside class="install-side reveal">
+            <h3>Requisitos</h3>
+            <ul class="checks">
+              <li>Windows 10 ou 11, 64 bits</li>
+              <li>Cerca de 300 MB livres</li>
+              <li>Internet para instalar e farmar</li>
+              <li>Sem Node.js, npm ou administrador</li>
+            </ul>
+
+            <div class="note">
+              <strong>SmartScreen</strong>
+              <p>O instalador ainda não tem assinatura de código. Se o Windows avisar que protegeu o PC, clique em <em>Mais informações → Executar assim mesmo</em>.</p>
+            </div>
+
+            <a class="btn btn-primary" href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest" data-download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+              Baixar agora
+            </a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container faq-wrap">
+        <header class="section-head reveal">
+          <p class="eyebrow">Dúvidas</p>
+          <h2>Perguntas frequentes</h2>
+        </header>
+
+        <div class="faq reveal">
+          <details>
+            <summary>O NottIdle é gratuito?</summary>
+            <p>Sim. Não tem anúncios, assinatura nem versão paga. O projeto é mantido com apoio voluntário.</p>
+          </details>
+          <details>
+            <summary>Preciso de conta na Twitch ou na Kick?</summary>
+            <p>Só para farmar pontos. Você pode instalar e explorar o app sem conectar nada — as contas ficam salvas apenas na sua máquina.</p>
+          </details>
+          <details>
+            <summary>Onde ficam meus dados?</summary>
+            <p>Em <code>%APPDATA%\NottIdle</code>: contas, canais, cookies e progresso. Nada é enviado para servidores do projeto. Faça backup dessa pasta de vez em quando.</p>
+          </details>
+          <details>
+            <summary>Consigo usar várias contas ao mesmo tempo?</summary>
+            <p>Sim. Cada conta roda em uma sessão isolada, com cookies e extensões próprios, e você organiza tudo em grupos e presets de grade.</p>
+          </details>
+          <details>
+            <summary>O farm continua com a janela minimizada?</summary>
+            <p>Sim. O farm roda em segundo plano e o app tenta reconectar sozinho quando um canal cai ou a janela é recriada.</p>
+          </details>
+          <details>
+            <summary>Como funcionam as atualizações?</summary>
+            <p>O app verifica o GitHub Releases sozinho, baixa em segundo plano e mostra um aviso na barra de título. A instalação preserva contas, canais e configurações.</p>
+          </details>
+          <details>
+            <summary>Funciona no Windows 7 ou 8?</summary>
+            <p>Não. O NottIdle usa recursos do Electron 33 e é distribuído apenas para Windows 10/11 de 64 bits.</p>
+          </details>
+          <details>
+            <summary>É afiliado à Twitch, Kick ou PokéIdle?</summary>
+            <p>Não. É um projeto independente, sem vínculo, endosso ou patrocínio dessas plataformas.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./" aria-label="NottIdle — início">
+          <img src="assets/img/logo.png" alt="" width="30" height="30">
+          <span>NottIdle</span>
+        </a>
+        <p>Contas idle, farm e Hunt em um app só. Gratuito e feito para durar.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="App">
+        <h4>App</h4>
+        <a href="#recursos">Recursos</a>
+        <a href="#capturas">Capturas</a>
+        <a href="#instalacao">Instalação</a>
+        <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest" data-download>Baixar</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Projeto">
+        <h4>Projeto</h4>
+        <a href="https://github.com/VinnyFachiani/NottIdle-Releases" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="#apoie">Apoie</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Legal">
+        <h4>Legal</h4>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://github.com/VinnyFachiani/NottIdle-Releases" target="_blank" rel="noopener">Contato</a>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> NottIdle. Feito por Vinny Fachiani.</p>
+      <p>Projeto independente, não afiliado à Twitch, à Kick ou ao PokéIdle.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
