@@ -15,12 +15,12 @@
 
 <p align="center">
   <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest">
-    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.1-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.1">
+    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.2-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.2">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.1-8B5CF6?style=flat-square" alt="Versão 1.0.1">
+  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.2-8B5CF6?style=flat-square" alt="Versão 1.0.2">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0EA5E9?style=flat-square&logo=windows&logoColor=white" alt="Windows 10 e 11 x64">
   <img src="https://img.shields.io/badge/Electron-33-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron 33">
   <img src="https://img.shields.io/badge/atualiza%C3%A7%C3%B5es-GitHub%20Releases-181717?style=flat-square&logo=github&logoColor=white" alt="Atualizações via GitHub Releases">
@@ -158,13 +158,13 @@ O botão **Otimizar RAM** limpa caches, força a coleta de lixo e recarrega as c
 ### Requisitos
 
 - **Windows 10 ou 11, 64 bits**
-- Cerca de **500 MB livres** em disco
+- Cerca de **300 MB livres** em disco (o download é de ~74 MB)
 - Internet para instalar, atualizar e farmar
 - Não precisa de Node.js, npm ou administrador
 
 ### Passo a passo
 
-1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.1.exe`.
+1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.2.exe` (~74 MB).
 2. Execute o arquivo baixado.
 3. Se o Windows mostrar **“O Windows protegeu o seu PC”**, clique em **Mais informações → Executar assim mesmo**. O instalador ainda não tem assinatura de código, então o SmartScreen exibe “editor desconhecido”. Isso é esperado.
 4. Escolha a pasta de instalação (opcional) e conclua. O app é instalado **por usuário**, em `%LOCALAPPDATA%\Programs\NottIdle`, e cria um atalho no Menu Iniciar.
@@ -320,7 +320,7 @@ O NottIdle se atualiza pelo **GitHub Releases**:
 
 Durante o reinício, o farm para por cerca de **10 a 20 segundos**; depois o auto-check reconecta os canais ao vivo.
 
-**Forçar uma checagem:** clique na versão (`v1.0.1`) no canto superior esquerdo da barra de título.
+**Forçar uma checagem:** clique na versão (`v1.0.2`) no canto superior esquerdo da barra de título.
 
 **Baixar manualmente:** pegue o instalador mais recente na aba Releases e instale por cima. O perfil é mantido.
 
@@ -463,10 +463,10 @@ A atualização não apaga o perfil. Verifique se o app está usando `%APPDATA%\
 
 | Item | Valor |
 |---|---|
-| Versão atual | **1.0.1** |
+| Versão atual | **1.0.2** |
 | Plataforma | Windows 10/11 x64 |
 | Runtime | Electron 33.4.11 |
-| Instalador | NSIS, ~203 MB, instalação por usuário |
+| Instalador | NSIS, ~74 MB de download, ~240 MB instalado, instalação por usuário |
 | Interface | pt-BR, tema escuro |
 | Atualizações | GitHub Releases (`VinnyFachiani/NottIdle-Releases`) |
 | Dados | `%APPDATA%\NottIdle` |
