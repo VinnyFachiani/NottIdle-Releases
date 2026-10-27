@@ -48,7 +48,7 @@ O **NottIdle** é um hub desktop para quem joga mais de um jogo idle ao mesmo te
 
 Cada conta idle roda em uma **sessão isolada do Chromium**: cookies, login e saves de uma conta não interferem nos das outras. É possível ver várias contas ao mesmo tempo em uma grade, farmar canais em segundo plano e usar a ferramenta **Hunt** para descobrir onde vale mais a pena caçar no PokéIdle.
 
-O app **não modifica os jogos nem os sites**. Ele apenas abre cada página dentro de uma sessão própria, como um navegador separado para cada conta.
+O app **não altera os arquivos dos jogos nem os seus saves**. Ele apenas abre cada página dentro de uma sessão própria, como um navegador separado para cada conta.
 
 <p align="center">
   <img src="screenshot.png" alt="Tela inicial do NottIdle" width="880">
@@ -227,7 +227,7 @@ Se a sessão expirar, o status volta para **não logado** e os pontos param de c
 
 1. Na aba **Twitch** ou **Kick**, digite o **nome do canal** (ex.: `gaules`, não a URL completa) e clique em **+**.
 2. Use o **toggle** do canal para ativá-lo.
-3. Clique em **Conectar todos ativos** para ligar todos de uma vez.
+3. Clique em **Conectar todos ativos** para ligar todos de uma vez. O botão apenas marca os canais como ativos; quem confirma se estão ao vivo é o auto-check.
 4. O **ponto verde** indica que o canal está ao vivo; o botão de chat abre o chat popout daquele canal.
 5. Deixe o app aberto. O farm roda em janelas ocultas — você pode minimizar o NottIdle e continuar usando o PC.
 
