@@ -15,12 +15,12 @@
 
 <p align="center">
   <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest">
-    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.2-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.2">
+    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.4-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.4">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.2-8B5CF6?style=flat-square" alt="Versão 1.0.2">
+  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.4-8B5CF6?style=flat-square" alt="Versão 1.0.4">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0EA5E9?style=flat-square&logo=windows&logoColor=white" alt="Windows 10 e 11 x64">
   <img src="https://img.shields.io/badge/Electron-33-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron 33">
   <img src="https://img.shields.io/badge/atualiza%C3%A7%C3%B5es-GitHub%20Releases-181717?style=flat-square&logo=github&logoColor=white" alt="Atualizações via GitHub Releases">
@@ -106,14 +106,14 @@ A grade permite acompanhar várias contas de uma vez, com layouts prontos:
 O farm roda em **janelas invisíveis de 1280×800**, com vídeo em **160p**, áudio mudo, bloqueio de imagens/fontes e proteção contra throttling. Isso mantém o consumo baixo mesmo com vários canais.
 
 - **Twitch:** mantém o vídeo ativo, fecha banners, clica em “Claim Bonus” e limpa o chat quando ele cresce demais.
-- **Kick:** mantém o vídeo ativo, aceita popups de pontos e consulta o saldo periodicamente.
-- **Auto-check a cada 5 minutos:** canais ao vivo são conectados automaticamente; canais offline são desconectados para liberar memória.
+- **Kick (limite da plataforma):** a conta recebe pontos de no máximo **~2 canais por ciclo de 5 minutos** — abrir mais canais não aumenta o total: a Kick troca quais canais são creditados a cada ciclo.
+- **Auto-check a cada 5 minutos:** atualiza o status ao vivo nas duas plataformas. Canais online são conectados e canais offline liberam memória.
 - **Recuperação de crash:** se a janela de um canal cair, o app recria sozinho, com espera progressiva.
 - **Uma sessão por plataforma:** o login da Twitch e o da Kick são compartilhados por todos os canais daquela plataforma. Os pontos vão para a conta logada.
 
 ### Pontos e recompensas da Kick
 
-Na aba **Kick**, cada canal mostra o saldo de pontos. Clique no badge para abrir o modal de recompensas: escolha a recompensa, escreva uma mensagem (quando exigido) e resgate. O botão fica bloqueado quando o saldo não é suficiente.
+Na aba **Kick**, cada canal mostra o saldo de pontos e um selo com o tempo desde o último ganho (`agora`, `há X min` ou `sem ganho Xm`). Ficar alguns minutos sem ganhar é normal: a Kick reveza quais canais credita a cada ciclo. Clique no badge para abrir o modal de recompensas: escolha a recompensa, escreva uma mensagem (quando exigido) e resgate. O botão fica bloqueado quando o saldo não é suficiente.
 
 ### Extensões do Chrome por conta
 
@@ -164,7 +164,7 @@ O botão **Otimizar RAM** limpa caches, força a coleta de lixo e recarrega as c
 
 ### Passo a passo
 
-1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.2.exe` (~74 MB).
+1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.4.exe` (~74 MB).
 2. Execute o arquivo baixado.
 3. Se o Windows mostrar **“O Windows protegeu o seu PC”**, clique em **Mais informações → Executar assim mesmo**. O instalador ainda não tem assinatura de código, então o SmartScreen exibe “editor desconhecido”. Isso é esperado.
 4. Escolha a pasta de instalação (opcional) e conclua. O app é instalado **por usuário**, em `%LOCALAPPDATA%\Programs\NottIdle`, e cria um atalho no Menu Iniciar.
@@ -227,16 +227,15 @@ Se a sessão expirar, o status volta para **não logado** e os pontos param de c
 
 1. Na aba **Twitch** ou **Kick**, digite o **nome do canal** (ex.: `gaules`, não a URL completa) e clique em **+**.
 2. Use o **toggle** do canal para ativá-lo.
-3. Clique em **Conectar todos ativos** para ligar todos de uma vez. O botão apenas marca os canais como ativos; quem confirma se estão ao vivo é o auto-check.
+3. Clique em **Conectar todos ao vivo** (Twitch e Kick): o app verifica na hora quem está transmitindo e conecta só esses. Canais offline não são abertos, e um canal que estava aberto e ficou offline é desconectado.
 4. O **ponto verde** indica que o canal está ao vivo; o botão de chat abre o chat popout daquele canal.
 5. Deixe o app aberto. O farm roda em janelas ocultas — você pode minimizar o NottIdle e continuar usando o PC.
 
 **O que esperar do auto-check:**
 
 - A cada **5 minutos**, o app verifica quem está ao vivo.
-- Canal **ao vivo e desconectado** é conectado automaticamente, mesmo que o toggle esteja desligado.
-- Canal **offline e conectado** é desconectado e a janela é fechada para liberar RAM.
-- Por isso, desligar um canal no toggle vale **até o próximo ciclo**. Se quiser que ele fique realmente parado, remova o canal ou deixe-o offline.
+- Na **Twitch**, canal **ao vivo e desconectado** é conectado automaticamente, mesmo que o toggle esteja desligado; canal **offline e conectado** é desconectado para liberar RAM. Desligar um canal no toggle vale até o próximo ciclo.
+- Na **Kick**, todos os canais ao vivo são conectados automaticamente. A Kick credita no máximo ~2 canais por ciclo, então abrir todos não rende mais pontos — só espalha os créditos.
 
 **Na Kick**, clique no badge de pontos do canal para ver o saldo e resgatar recompensas.
 
@@ -320,7 +319,7 @@ O NottIdle se atualiza pelo **GitHub Releases**:
 
 Durante o reinício, o farm para por cerca de **10 a 20 segundos**; depois o auto-check reconecta os canais ao vivo.
 
-**Forçar uma checagem:** clique na versão (`v1.0.2`) no canto superior esquerdo da barra de título.
+**Forçar uma checagem:** clique na versão (`v1.0.4`) no canto superior esquerdo da barra de título.
 
 **Baixar manualmente:** pegue o instalador mais recente na aba Releases e instale por cima. O perfil é mantido.
 
@@ -420,7 +419,7 @@ O Electron implementa um subconjunto das APIs de extensões do Chrome. Extensõe
 <details>
 <summary><strong>Consigo usar várias contas da Twitch ou da Kick ao mesmo tempo?</strong></summary>
 
-Não. O NottIdle usa **uma sessão por plataforma**: uma conta da Twitch e uma da Kick. Vários canais podem ser farmados ao mesmo tempo, mas todos os pontos vão para a conta logada naquela plataforma.
+Não. O NottIdle usa **uma sessão por plataforma**: uma conta da Twitch e uma da Kick. Vários canais podem ser farmados ao mesmo tempo, mas todos os pontos vão para a conta logada naquela plataforma. Na Kick, a conta recebe pontos de no máximo ~2 canais por ciclo de 5 min, então abrir todos os canais ao vivo não multiplica o total.
 
 </details>
 
@@ -463,7 +462,7 @@ A atualização não apaga o perfil. Verifique se o app está usando `%APPDATA%\
 
 | Item | Valor |
 |---|---|
-| Versão atual | **1.0.2** |
+| Versão atual | **1.0.4** |
 | Plataforma | Windows 10/11 x64 |
 | Runtime | Electron 33.4.11 |
 | Instalador | NSIS, ~74 MB de download, ~240 MB instalado, instalação por usuário |
