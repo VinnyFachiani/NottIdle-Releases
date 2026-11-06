@@ -15,12 +15,12 @@
 
 <p align="center">
   <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest">
-    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.5-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.5">
+    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.7-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.7">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.5-8B5CF6?style=flat-square" alt="Versão 1.0.5">
+  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.7-8B5CF6?style=flat-square" alt="Versão 1.0.7">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0EA5E9?style=flat-square&logo=windows&logoColor=white" alt="Windows 10 e 11 x64">
   <img src="https://img.shields.io/badge/Electron-33-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron 33">
   <img src="https://img.shields.io/badge/atualiza%C3%A7%C3%B5es-GitHub%20Releases-181717?style=flat-square&logo=github&logoColor=white" alt="Atualizações via GitHub Releases">
@@ -102,16 +102,20 @@ A grade permite acompanhar várias contas de uma vez, com layouts prontos:
 
 > A grade abre sempre em conta única ao iniciar o app; a ordem das telas é salva, mas o estado “grade aberta” não. Entre 4 e 6 contas é o uso mais confortável — acima de 9 o app usa um layout genérico.
 
-### Farm de Twitch e Kick
+### Farm de Twitch e Kick com Rotação Inteligente e Otimização Extrema
 
-O farm roda em **janelas invisíveis de 1280×800**, com vídeo em **160p**, áudio mudo, bloqueio de imagens/fontes e proteção contra throttling. Isso mantém o consumo baixo mesmo com vários canais.
+O farm roda em **janelas invisíveis de 800×600** (mais de 53% de economia em buffers gráficos), com compositor limitado a **1 FPS**, vídeo em **160p**, áudio mudo, bloqueio de imagens/fontes e proteção contra throttling. Isso mantém o consumo de CPU e RAM muito baixo mesmo durante longas sessões.
 
-- **Twitch:** mantém o vídeo ativo, fecha banners, clica em “Claim Bonus” e limpa o chat quando ele cresce demais.
-- **Kick (limite da plataforma):** a conta recebe pontos de no máximo **~2 canais por ciclo de 5 minutos** — abrir mais canais não aumenta o total: a Kick troca quais canais são creditados a cada ciclo.
-- **Auto-check a cada 5 minutos:** atualiza o status ao vivo nas duas plataformas. Canais online são conectados e canais offline liberam memória — canais pausados com **Desmarcar todos** não são reconectados.
-- **Desmarcar todos:** fecha todas as janelas e pausa o farm daquela plataforma, mantendo os canais cadastrados. **Conectar todos ao vivo** (ou o toggle do canal) limpa a pausa e retoma.
+- **Métodos de Farm (Twitch e Kick):**
+  - **Automático (`auto`):** cicla e reveza automaticamente todos os canais online cadastrados em slots de 2 streams ativas por vez.
+  - **Personalizado (`custom`):** cicla apenas entre os canais selecionados pelo usuário que estiverem **online** (canais offline não gastam vagas nem janelas).
+- **Rotação inteligente de vagas (máx 2 simultâneas):**
+  - **Kick:** ciclos de 5 minutos (limite da plataforma para pontuação de 10 pts).
+  - **Twitch:** ciclos de 15 minutos (limite oficial da Twitch de 2 streams com pontos/baús simultâneos; sincronizado com a frequência de baús bônus de 50 pts).
+- **Auto-check a cada 5 minutos:** atualiza o status ao vivo nas duas plataformas. Canais online entram na fila de rotação e canais offline liberam memória.
+- **Desmarcar todos:** fecha todas as janelas e pausa o farm daquela plataforma. **Conectar todos ao vivo** retoma a rotação.
 - **Recuperação de crash:** se a janela de um canal cair, o app recria sozinho, com espera progressiva.
-- **Uma sessão por plataforma:** o login da Twitch e o da Kick são compartilhados por todos os canais daquela plataforma. Os pontos vão para a conta logada.
+- **Uma sessão por plataforma:** login compartilhado por todos os canais daquela plataforma.
 
 ### Pontos e recompensas da Kick
 
@@ -166,7 +170,7 @@ O botão **Otimizar RAM** limpa caches, força a coleta de lixo e recarrega as c
 
 ### Passo a passo
 
-1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.5.exe` (~74 MB).
+1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.7.exe` (~75 MB).
 2. Execute o arquivo baixado.
 3. Se o Windows mostrar **“O Windows protegeu o seu PC”**, clique em **Mais informações → Executar assim mesmo**. O instalador ainda não tem assinatura de código, então o SmartScreen exibe “editor desconhecido”. Isso é esperado.
 4. Escolha a pasta de instalação (opcional) e conclua. O app é instalado **por usuário**, em `%LOCALAPPDATA%\Programs\NottIdle`, e cria um atalho no Menu Iniciar.
@@ -321,7 +325,7 @@ O NottIdle se atualiza pelo **GitHub Releases**:
 
 Durante o reinício, o farm para por cerca de **10 a 20 segundos**; depois o auto-check reconecta os canais ao vivo.
 
-**Forçar uma checagem:** clique na versão (`v1.0.5`) no canto superior esquerdo da barra de título.
+**Forçar uma checagem:** clique na versão (`v1.0.7`) no canto superior esquerdo da barra de título.
 
 **Baixar manualmente:** pegue o instalador mais recente na aba Releases e instale por cima. O perfil é mantido.
 
@@ -464,7 +468,7 @@ A atualização não apaga o perfil. Verifique se o app está usando `%APPDATA%\
 
 | Item | Valor |
 |---|---|
-| Versão atual | **1.0.5** |
+| Versão atual | **1.0.7** |
 | Plataforma | Windows 10/11 x64 |
 | Runtime | Electron 33.4.11 |
 | Instalador | NSIS, ~74 MB de download, ~240 MB instalado, instalação por usuário |
