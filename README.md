@@ -15,12 +15,12 @@
 
 <p align="center">
   <a href="https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest">
-    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.7-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.7">
+    <img src="https://img.shields.io/badge/BAIXAR%20A%20VERS%C3%83O%201.0.8-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Baixar a versão 1.0.8">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.7-8B5CF6?style=flat-square" alt="Versão 1.0.7">
+  <img src="https://img.shields.io/badge/vers%C3%A3o-1.0.8-8B5CF6?style=flat-square" alt="Versão 1.0.8">
   <img src="https://img.shields.io/badge/Windows-10%20%7C%2011%20x64-0EA5E9?style=flat-square&logo=windows&logoColor=white" alt="Windows 10 e 11 x64">
   <img src="https://img.shields.io/badge/Electron-33-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron 33">
   <img src="https://img.shields.io/badge/atualiza%C3%A7%C3%B5es-GitHub%20Releases-181717?style=flat-square&logo=github&logoColor=white" alt="Atualizações via GitHub Releases">
@@ -104,7 +104,7 @@ A grade permite acompanhar várias contas de uma vez, com layouts prontos:
 
 ### Farm de Twitch e Kick com Rotação Inteligente e Otimização Extrema
 
-O farm roda em **janelas invisíveis de 800×600** (mais de 53% de economia em buffers gráficos), com compositor limitado a **1 FPS**, vídeo em **160p**, áudio mudo, bloqueio de imagens/fontes e proteção contra throttling. Isso mantém o consumo de CPU e RAM muito baixo mesmo durante longas sessões.
+O farm roda em **janelas invisíveis de 800×600** (mais de 53% de economia em buffers gráficos), com `paintWhenInitiallyHidden: false`, vídeo em **160p**, áudio mudo, bloqueio de imagens/fontes e proteção contra throttling. Isso mantém o consumo de CPU e RAM mais baixo mesmo durante longas sessões.
 
 - **Métodos de Farm (Twitch e Kick):**
   - **Automático (`auto`):** cicla e reveza automaticamente todos os canais online cadastrados em slots de 2 streams ativas por vez.
@@ -116,6 +116,7 @@ O farm roda em **janelas invisíveis de 800×600** (mais de 53% de economia em b
 - **Desmarcar todos:** fecha todas as janelas e pausa o farm daquela plataforma. **Conectar todos ao vivo** retoma a rotação.
 - **Recuperação de crash:** se a janela de um canal cair, o app recria sozinho, com espera progressiva.
 - **Uma sessão por plataforma:** login compartilhado por todos os canais daquela plataforma.
+- **Cores por plataforma e avisos:** a **Twitch** usa o roxo nos pontos e nas lojas; a **Kick** usa o verde. A moedinha 🪙 acompanha o saldo nas duas, e cada aumento de pontos gera um toast (`🪙 +N pts em canal`), além do toast do baú da Twitch.
 
 ### Pontos e recompensas da Kick
 
@@ -142,7 +143,7 @@ A aba **Hunt** replica a ferramenta “Onde caçar?” do PokéIdle dentro do No
 2. Informe o **nível do treinador**.
 3. O motor simula cada hunt e ranqueia os melhores locais por **XP/h** ou **ouro/h**.
 
-Você pode filtrar apenas hunts liberadas, considerar **poção automática** e ver o risco de cada local:
+Você pode filtrar apenas hunts liberadas, escolher o **tipo do dia**, alternar entre **XP/h** e **ouro/h** e navegar pelos chips de região. A poção é **automática sempre** (como no site). O risco de cada local aparece assim:
 
 | Indicador | Significado |
 |---|---|
@@ -151,11 +152,17 @@ Você pode filtrar apenas hunts liberadas, considerar **poção automática** e 
 | `⚠ N%` | O pior golpe tira 50% ou mais do HP. |
 | `✓ N%` | O pior golpe fica abaixo de 50% do HP. |
 
-A Hunt funciona **offline** e salva ficha, nível e preferências no `localStorage` do app. Ela não considera AoE, TM Elemental (Z-Move), Loot Boost nem a venda de Pokémon capturados. Os dados vêm de um snapshot do jogo (v1.337.0, de 21/10/2026, com 1.031 hunts) e podem ficar desatualizados quando o jogo muda.
+**Tipo do dia:** nas hunts do Mapa, a tipagem sorteada pelo servidor às **18:00 de Brasília** deixa todos os Pokémon daquele tipo — o seu e os selvagens — **2× mais fortes** (ataque, defesa e vida). O motor traduz isso no dano: ×2 para quem ataca e ×¼ para quem apanha; tipo duplo conta se qualquer um bater. Escolha o tipo no seletor ao lado de “só liberadas”; a escolha fica salva.
+
+**Ritmo do mapa:** o ranking usa o modelo atual de hunts em bandos do jogo (1.377+): `abates/h = 3600 ÷ (caminhada + luta)`, com o tempo de caminhada medido por mapa. Hunt cujo mapa ainda não foi medido aparece com **≈** e a faixa estimada.
+
+A Hunt funciona **offline** e salva ficha, nível, tipo do dia e preferências no `localStorage` do app. Ela não considera AoE, TM Elemental (Z-Move), Loot Boost nem a venda de Pokémon capturados. Os dados vêm do snapshot do jogo **v1.401.2 (05/11/2026, 1.042 hunts)**, com 11 hunts novas e correções de nível/região. O snapshot é estático; mudanças do jogo exigem uma nova versão do app.
 
 ### Monitor e Otimizar RAM
 
-No rodapé da barra lateral, o monitor mostra **RAM** e **CPU** do app. Passe o mouse sobre a RAM para ver o consumo e o tempo de cada stream ativa.
+No rodapé da barra lateral, o monitor mostra a **RAM privada do Windows** (a mesma coluna Memória da aba Processos) e a **CPU total** na escala do Gerenciador de Tarefas. O valor exato da RAM é atualizado a cada 30 s com a janela visível; **clique no pill de RAM** para forçar uma leitura.
+
+Passe o mouse sobre a RAM para ver a RAM privada/commit, o working set, o breakdown por GPU/renderers/utilitários e o consumo/uptime de cada stream. Contas ou streams que dividem o mesmo processo aparecem marcados como compartilhados, sem contar a memória duas vezes.
 
 O botão **Otimizar RAM** limpa caches, força a coleta de lixo e recarrega as contas abertas. Use quando o app estiver aberto há muitas horas — as contas reiniciam por alguns segundos.
 
@@ -170,7 +177,7 @@ O botão **Otimizar RAM** limpa caches, força a coleta de lixo e recarrega as c
 
 ### Passo a passo
 
-1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.7.exe` (~75 MB).
+1. Abra a aba **[Releases](https://github.com/VinnyFachiani/NottIdle-Releases/releases/latest)** e baixe o instalador mais recente: `NottIdle-Setup-1.0.8.exe` (~75 MB).
 2. Execute o arquivo baixado.
 3. Se o Windows mostrar **“O Windows protegeu o seu PC”**, clique em **Mais informações → Executar assim mesmo**. O instalador ainda não tem assinatura de código, então o SmartScreen exibe “editor desconhecido”. Isso é esperado.
 4. Escolha a pasta de instalação (opcional) e conclua. O app é instalado **por usuário**, em `%LOCALAPPDATA%\Programs\NottIdle`, e cria um atalho no Menu Iniciar.
@@ -270,8 +277,8 @@ Também é possível usar **Escolher pasta** para carregar uma extensão descomp
 2. No jogo, copie a ficha do Pokémon (do nome até “Stats-base da espécie”) e cole no campo.
 3. Informe o nível do treinador.
 4. Escolha ordenar por **XP/h** ou **Ouro/h**.
-5. Marque **só liberadas** e **poção automática** conforme a sua situação.
-6. Veja o ranking, o risco de cada hunt e navegue pelas páginas de resultados.
+5. Marque **só liberadas** e escolha o **tipo do dia** (se houver).
+6. Veja o ranking, os chips de região, o risco e os abates/h de cada hunt.
 
 A ficha fica salva para a próxima vez. O botão **Limpar** apaga apenas os dados da Hunt, não as contas nem os canais.
 
@@ -300,12 +307,13 @@ O farm foi feito para ser invisível e leve:
 
 | Intervalo | Tarefa |
 |---|---|
-| 3 s | RAM/CPU do app (inclui uso por stream no tooltip) |
+| 2 s | Amostra de CPU do app no processo principal (a UI atualiza a cada 5 s) |
 | 5 s | Manter vídeo ativo e clicar em bônus (Twitch) |
 | 15 s | Limpar chat da Twitch e aceitar popups da Kick |
 | 20 s | Status ao vivo dos canais Twitch ativos |
-| 30 s | Coleta de lixo (`gc`) nas janelas de farm |
+| 30 s | Coleta de lixo (`gc`) nas janelas de farm e leitura exata da RAM do Windows |
 | 45 s | Saldo de pontos da Kick |
+| 60 s | Saldo de pontos da Twitch |
 | 5 min | Verificação de live e auto-conectar/desconectar |
 | 10 min | Coleta de lixo das views e do processo principal |
 
@@ -325,7 +333,7 @@ O NottIdle se atualiza pelo **GitHub Releases**:
 
 Durante o reinício, o farm para por cerca de **10 a 20 segundos**; depois o auto-check reconecta os canais ao vivo.
 
-**Forçar uma checagem:** clique na versão (`v1.0.7`) no canto superior esquerdo da barra de título.
+**Forçar uma checagem:** clique na versão (`v1.0.8`) no canto superior esquerdo da barra de título.
 
 **Baixar manualmente:** pegue o instalador mais recente na aba Releases e instale por cima. O perfil é mantido.
 
@@ -411,7 +419,7 @@ O auto-check roda a cada 5 minutos. Se o canal ficou offline, o app desconecta e
 <details>
 <summary><strong>O app está consumindo muita RAM.</strong></summary>
 
-Cada conta e cada stream é uma página do Chromium. Entre **4 e 6 contas** é o uso mais confortável; os layouts prontos vão até 9 telas, mas quanto mais contas abertas, maior o consumo. Use **Suspender** nas contas paradas e **Otimizar RAM** depois de muitas horas. Evite deixar canais offline ativos.
+Cada conta e cada stream é uma página do Chromium. Entre **4 e 6 contas** é o uso mais confortável; os layouts prontos vão até 9 telas, mas quanto mais contas abertas, maior o consumo. O monitor mostra a **RAM privada do Windows** (a mesma coluna Memória do Gerenciador); se os números parecerem diferentes, abra o tooltip para comparar privada/commit/working set. Clique no pill para forçar a leitura exata. Use **Suspender** nas contas paradas e **Otimizar RAM** depois de muitas horas. Evite deixar canais offline ativos.
 
 </details>
 
@@ -468,7 +476,7 @@ A atualização não apaga o perfil. Verifique se o app está usando `%APPDATA%\
 
 | Item | Valor |
 |---|---|
-| Versão atual | **1.0.7** |
+| Versão atual | **1.0.8** |
 | Plataforma | Windows 10/11 x64 |
 | Runtime | Electron 33.4.11 |
 | Instalador | NSIS, ~74 MB de download, ~240 MB instalado, instalação por usuário |
