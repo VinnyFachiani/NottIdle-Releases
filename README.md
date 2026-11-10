@@ -67,7 +67,8 @@ O app **não altera os arquivos dos jogos nem os seus saves**. Ele apenas abre c
 | 🟢 **Farm Kick** | Pontos, recompensas e resgate direto pelo app, com saldo e histórico por canal. |
 | 🔑 **Login assistido** | Janela dedicada para entrar na Twitch e na Kick uma única vez; o app detecta a sessão sozinho. |
 | 🧱 **Extensões por conta** | Instale extensões da Chrome Web Store na sessão de cada conta ou escolha uma pasta local. |
-| 🎯 **Hunt — Onde caçar?** | Simula as hunts do PokéIdle e ranqueia por **XP/h** ou **ouro/h**, com risco de morte. |
+| 🎯 **Hunt — Onde caçar?** | Simula as hunts do PokéIdle e ranqueia por **XP/h**, **ouro/h**, **Shiny/h** ou **Fragmento/h**, com risco de morte. |
+| ↔️ **Barra lateral ajustável** | Arraste a divisória para alargar ou estreitar o painel de contas e canais, ou recolha o painel deixando só o rail de ícones. A largura e o estado ficam salvos. |
 | 📊 **Monitor de recursos** | RAM e CPU do app em tempo real, uso por stream e botão **Otimizar RAM**. |
 | 🔄 **Atualização automática** | Verifica, baixa e instala novas versões pelo GitHub Releases sem perder o perfil. |
 | 🌙 **Tema escuro em pt-BR** | Interface pensada para ficar aberta por horas, com atalhos e ajuda em cada aba. |
@@ -141,9 +142,9 @@ A aba **Hunt** replica a ferramenta “Onde caçar?” do PokéIdle dentro do No
 
 1. No jogo, selecione do **nome do Pokémon** até **“Stats-base da espécie”**, copie e cole no campo.
 2. Informe o **nível do treinador**.
-3. O motor simula cada hunt e ranqueia os melhores locais por **XP/h** ou **ouro/h**.
+3. O motor simula cada hunt e ranqueia os melhores locais por **XP/h**, **ouro/h**, **Shiny/h** ou **Fragmento/h**.
 
-Você pode filtrar apenas hunts liberadas, escolher o **tipo do dia**, alternar entre **XP/h** e **ouro/h** e navegar pelos chips de região. A poção é **automática sempre** (como no site). O risco de cada local aparece assim:
+Você pode filtrar apenas hunts liberadas, escolher o **tipo do dia**, marcar **AoE**, alternar entre **XP/h**, **ouro/h**, **Shiny/h** e **Fragmento/h** e navegar pelos chips de região. A poção é **automática sempre** (como no site). O risco de cada local aparece assim:
 
 | Indicador | Significado |
 |---|---|
@@ -156,7 +157,13 @@ Você pode filtrar apenas hunts liberadas, escolher o **tipo do dia**, alternar 
 
 **Ritmo do mapa:** o ranking usa o modelo atual de hunts em bandos do jogo (1.377+): `abates/h = 3600 ÷ (caminhada + luta)`, com o tempo de caminhada medido por mapa. Hunt cujo mapa ainda não foi medido aparece com **≈** e a faixa estimada.
 
-A Hunt funciona **offline** e salva ficha, nível, tipo do dia e preferências no `localStorage` do app. Ela não considera AoE, TM Elemental (Z-Move), Loot Boost nem a venda de Pokémon capturados. Os dados vêm do snapshot do jogo **v1.401.2 (05/11/2026, 1.042 hunts)**, com 11 hunts novas e correções de nível/região. O snapshot é estático; mudanças do jogo exigem uma nova versão do app.
+**Shiny/h:** cada selvagem caído recebe uma bola, a escolhida ao lado do seletor, em todo corpo (o “Throw Nonstop” do VIP). A chance de captura vem da ficha do jogo, pelo estágio evolutivo da espécie, e o Shiny sai em 1 de cada 24.000 capturas — só nas espécies com arte Shiny. Sem Capture Boost e sem Shiny Lure; a venda dos capturados não entra.
+
+**Fragmento/h:** disponível a partir do **Nv 5.000** do treinador. O Fragmento de Ovo Shiny cai em toda hunt de Unova em diante, com chance que sobe com o nível da hunt (de 1 em 150.000 a 1 em 66.964 abates); 10 fragmentos fabricam um ovo, que choca em 2 dias. Sem Loot Boost.
+
+**AoE:** a caixa vem marcada quando a ficha mostra o disco. Cada golpe acerta todo selvagem no 11×11 em volta do herói; o número aparece com **≈** e faixa, porque os selvagens por golpe não foram medidos em jogo. O TM Elemental (Z-Move) continua fora.
+
+A Hunt funciona **offline** e salva ficha, nível, tipo do dia, bola, AoE e preferências no `localStorage` do app. Ela não considera TM Elemental (Z-Move), Loot Boost nem a venda de Pokémon capturados. Os dados vêm do snapshot de hunts **v1.401.2 (05/11/2026, 1.042 hunts)**, com a tabela de ritmo do jogo **v1.409.0**; o snapshot é estático, e mudanças do jogo exigem uma nova versão do app.
 
 ### Monitor e Otimizar RAM
 
@@ -276,7 +283,7 @@ Também é possível usar **Escolher pasta** para carregar uma extensão descomp
 1. Abra a aba **Hunt**.
 2. No jogo, copie a ficha do Pokémon (do nome até “Stats-base da espécie”) e cole no campo.
 3. Informe o nível do treinador.
-4. Escolha ordenar por **XP/h** ou **Ouro/h**.
+4. Escolha ordenar por **XP/h**, **Ouro/h**, **Shiny/h** ou **Fragmento/h**.
 5. Marque **só liberadas** e escolha o **tipo do dia** (se houver).
 6. Veja o ranking, os chips de região, o risco e os abates/h de cada hunt.
 
